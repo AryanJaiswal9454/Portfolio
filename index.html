@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aryan Jaiswal | Python Full-Stack, AI and Data Developer</title>
+<meta name="description" content="Portfolio of Aryan Jaiswal, an MCA graduate building AI-powered web apps and data products with Python, Django and React.">
+<meta property="og:title" content="Aryan Jaiswal | Portfolio">
+<meta property="og:description" content="AI-powered web apps and data products built with Python, Django and React.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F3A7A'/%3E%3Ctext x='32' y='43' font-size='30' font-family='Arial' font-weight='700' fill='white' text-anchor='middle'%3EAJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f9fc;--surface:#fff;--text:#16213a;--muted:#55607a;--line:#dbe2ee;--navy:#1f3a7a;--accent:#1f3a7a;--accent-ink:#fff;--soft:#e8eefb;color-scheme:light}
+:root[data-theme="dark"]{--bg:#0e1525;--surface:#151e33;--text:#e8edf8;--muted:#9aa6c2;--line:#26324f;--navy:#8fb0ff;--accent:#8fb0ff;--accent-ink:#0e1525;--soft:#1b2744;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--navy)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font-weight:800;text-decoration:none;color:var(--text);letter-spacing:-.01em}
+.nav nav{display:flex;gap:22px;align-items:center}
+.nav nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:15px}
+.nav nav a:hover{color:var(--text)}
+#theme{background:none;border:1px solid var(--line);color:var(--text);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:17px;line-height:1}
+section{padding:56px 0}
+h2{font-size:1.7rem;letter-spacing:-.02em;margin-bottom:6px}
+.sub{color:var(--muted);margin-bottom:28px;max-width:60ch}
+/* hero */
+.hero{padding:64px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}
+h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;letter-spacing:-.035em;font-weight:800}
+.role{font-size:1.25rem;color:var(--navy);font-weight:600;margin:14px 0 14px}
+.lede{color:var(--muted);max-width:52ch;margin-bottom:26px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:11px 20px;border-radius:10px;font-weight:600;text-decoration:none;border:1.5px solid var(--navy);color:var(--navy);font-size:15px}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{filter:brightness(1.08)}
+.avatar{width:112px;height:112px;border-radius:50%;background:var(--soft);border:2px solid var(--line);display:grid;place-items:center;font-weight:800;font-size:2rem;color:var(--navy);overflow:hidden;margin-bottom:22px;position:relative}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.feature{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+.feature h3{font-size:1.2rem;letter-spacing:-.01em}
+.feature .fl{color:var(--muted);font-size:14px;margin-bottom:4px}
+.feature p{color:var(--muted);margin:8px 0 18px}
+.flow{list-style:none;padding:0;margin:0 0 20px 5px;border-left:2px solid var(--line)}
+.flow li{position:relative;padding:0 0 12px 18px;font-size:14px;color:var(--muted)}
+.flow li::before{content:"";position:absolute;left:-6px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.flow b{display:block;font-size:15px;color:var(--text)}
+.status{display:inline-block;margin-left:8px;font-size:12px;font-weight:700;padding:2px 10px;border-radius:99px;background:var(--soft);color:var(--navy);border:1px solid var(--line);vertical-align:middle}
+/* projects */
+.chips{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:var(--surface);color:var(--text);padding:7px 16px;border-radius:99px;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.proj{display:grid;grid-template-columns:200px 1fr;gap:12px 32px;padding:26px 0;border-top:1px solid var(--line)}
+.proj:last-child{border-bottom:1px solid var(--line)}
+.proj h3{font-size:1.15rem;letter-spacing:-.01em}
+.proj .kind{color:var(--muted);font-size:14px;margin-top:2px}
+.proj ul{padding-left:18px;margin-bottom:12px;color:var(--text)}
+.proj li{margin:4px 0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.tags span{background:var(--soft);color:var(--navy);padding:2px 10px;border-radius:6px;font-size:13px;font-weight:600}
+.links{display:flex;gap:18px;font-weight:600;font-size:15px}
+.note{color:var(--muted);font-size:13px;margin-top:20px}
+/* timeline */
+.tl{border-left:2px solid var(--line);margin-left:6px}
+.job{position:relative;padding:0 0 28px 26px}
+.job::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.job h3{font-size:1.05rem}
+.job .meta{color:var(--muted);font-size:14px;margin-bottom:6px}
+.job ul{padding-left:18px}
+.job li{margin:3px 0}
+/* skills & certs */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+dl.skills div{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+dl.skills dt{font-weight:700}
+dl.skills dd{color:var(--muted);margin:0}
+.certs{list-style:none;padding:0}
+.certs li{padding:10px 0;border-top:1px solid var(--line)}
+.certs span{display:block;color:var(--muted);font-size:14px}
+.edu p{margin:6px 0}
+/* contact */
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:32px}
+.contact ul{list-style:none;padding:0;margin:18px 0 22px;display:grid;gap:8px}
+footer{padding:28px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media(max-width:780px){
+.hero .wrap,.grid2{grid-template-columns:1fr}
+.proj{grid-template-columns:1fr;gap:8px}
+.nav nav a{display:none}
+dl.skills div{grid-template-columns:1fr;gap:2px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+<a class="brand" href="#top">Aryan Jaiswal</a>
+<nav aria-label="Main"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+<button id="theme" type="button" aria-label="Switch to dark theme" title="Toggle light or dark theme">&#9790;</button></nav>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+<div>
+<div class="avatar"><span>AJ</span><img src="assets/photo.jpg" alt="Photo of Aryan Jaiswal" onerror="this.remove()"></div>
+<h1>Aryan Jaiswal</h1>
+<p class="role">Python full-stack developer building AI and data products</p>
+<p class="lede">MCA graduate from Varanasi, now based in Noida and training as a Python full-stack developer at QSpiders. I build and deploy web apps with Django, React and machine learning, from the model to the live link.</p>
+<div class="btns">
+<a class="btn primary" href="#projects">See my projects</a>
+<a class="btn" href="assets/Aryan_Jaiswal_Resume_AI.pdf" download>Resume (AI)</a>
+<a class="btn" href="assets/Aryan_Jaiswal_Resume_Data_Analytics.pdf" download>Resume (Data)</a>
+</div>
+</div>
+<div class="feature" aria-label="Featured project">
+<div class="fl">Featured project</div>
+<h3>Dynamic AI Chatbot</h3>
+<p>A voice-enabled assistant I built and deployed end to end. Every reply passes through these four layers.</p>
+<ul class="flow">
+<li><b>Browser</b>React interface with voice input and output</li>
+<li><b>API</b>Django REST with JWT login and email OTP sign-up</li>
+<li><b>Model</b>Google Gemini through a provider-neutral LLM layer</li>
+<li><b>Data</b>PostgreSQL on Neon, running in Docker on Render</li>
+</ul>
+<div class="btns"><a class="btn primary" href="https://chatbot-web-yhtv.onrender.com/" target="_blank" rel="noopener">Try the live demo</a><a class="btn" href="https://github.com/AryanJaiswal9454/Dynamic-Chatbot" target="_blank" rel="noopener">View code</a></div>
+</div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+<h2>Projects</h2>
+<p class="sub">Deployed, with source code on GitHub. Filter by the kind of role you are hiring for.</p>
+<div class="chips" role="group" aria-label="Filter projects">
+<button class="chip" type="button" data-f="all" aria-pressed="true">All</button>
+<button class="chip" type="button" data-f="ai" aria-pressed="false">AI</button>
+<button class="chip" type="button" data-f="data" aria-pressed="false">Data</button>
+</div>
+<div id="list"></div>
+<p class="note">Live demos run on free hosting and can take up to a minute to wake up on the first visit.</p>
+</div></section>
+
+<section id="experience"><div class="wrap">
+<h2>Experience</h2>
+<p class="sub">Internships and training, most recent first.</p>
+<div class="tl">
+<div class="job"><h3>Python Full-Stack Developer Trainee</h3><div class="meta">QSpiders, Noida | Jan 2026 to present</div>
+<ul><li>Training in full-stack development with Python, Django, REST APIs, React and SQL databases.</li><li>Practicing database design, query writing and the software development lifecycle.</li></ul></div>
+<div class="job"><h3>Data Science &amp; Analytics Intern</h3><div class="meta">Zidio Development Pvt. Ltd. | Aug to Nov 2026</div>
+<ul><li>Built Project Foresight, a demand forecasting and inventory-risk pipeline using Python, Pandas and LightGBM.</li><li>Delivered it through a Streamlit dashboard and a FastAPI scoring service; completed Zidio's training program.</li></ul></div>
+<div class="job"><h3>Data Analytics Virtual Intern</h3><div class="meta">VOIS for Tech / AICTE / Edunet Foundation | Aug to Sep 2026</div>
+<ul><li>Completed the Data Analytics internship program, 10 August to 10 September 2026.</li></ul></div>
+<div class="job"><h3>Data Analytics Intern</h3><div class="meta">Centum Foundation | Jan to Mar 2024</div>
+<ul><li>Built a base in Python programming, logic-building and problem-solving through scripting exercises.</li></ul></div>
+</div>
+</div></section>
+
+<section id="skills"><div class="wrap grid2">
+<div>
+<h2>Skills</h2>
+<dl class="skills">
+<div><dt>Languages</dt><dd>Python, SQL, C, JavaScript</dd></div>
+<div><dt>AI and ML</dt><dd>Generative AI, LLM APIs (Google Gemini), prompt engineering, scikit-learn, LightGBM, Pandas, NumPy</dd></div>
+<div><dt>Web</dt><dd>Django, Django REST Framework, FastAPI, React.js, Streamlit, HTML5, CSS3</dd></div>
+<div><dt>Databases</dt><dd>MySQL, PostgreSQL, Oracle SQL*Plus</dd></div>
+<div><dt>Tools</dt><dd>Git, GitHub, Docker, Render, Tableau, VS Code</dd></div>
+</dl>
+</div>
+<div>
+<h2>Certifications</h2>
+<ul class="certs">
+<li>Google AI Professional Certificate<span>Google on Coursera, Nov 2026</span></li>
+<li>Claude Code 101<span>Anthropic</span></li>
+<li>Data Science &amp; Analytics Training<span>Zidio Development, Aug to Nov 2026</span></li>
+<li>Forage job simulations<span>TATA (GenAI data analytics), Deloitte (data analytics), Commonwealth (software engineering)</span></li>
+<li>Getting Started with AI, Introduction to Generative AI<span>IBM, Google Cloud</span></li>
+</ul>
+<div class="edu"><h2 style="margin-top:28px">Education</h2>
+<p><b>MCA</b>, Rajarshi School of Management and Technology, Varanasi, 2024 to 2026 (CGPA 8.2)</p>
+<p><b>BCA</b>, Rajarshi School of Management and Technology, Varanasi, 2021 to 2024 (70.66%)</p></div>
+</div>
+</div></section>
+
+<section id="contact"><div class="wrap"><div class="contact">
+<h2>Let's talk</h2>
+<p class="sub" style="margin-bottom:0">I'm looking for an entry-level Python, Django, AI or data role. Email is the fastest way to reach me.</p>
+<ul>
+<li>Email: <a href="mailto:aryanjaiswal6342@gmail.com">aryanjaiswal6342@gmail.com</a></li>
+<li>Phone: <a href="tel:+916389766905">+91-6389766905</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/aryan-jaiswal-4491a8319" rel="noopener">aryan-jaiswal</a></li>
+<li>GitHub: <a href="https://github.com/AryanJaiswal9454" rel="noopener">AryanJaiswal9454</a></li>
+</ul>
+<a class="btn primary" href="mailto:aryanjaiswal6342@gmail.com?subject=Opportunity%20for%20Aryan%20Jaiswal">Send an email</a>
+</div></div></section>
+</main>
+<footer><div class="wrap">Aryan Jaiswal, Noida, Uttar Pradesh. Built with HTML, CSS and JavaScript.</div></footer>
+
+<script>
+var P=[
+{k:['ai'],t:'Dynamic AI Chatbot',s:'Full-stack, voice-enabled assistant',b:['React and Django REST chatbot that answers with Google Gemini through a provider-neutral LLM layer.','Prompt composition, context management, sentiment-aware tone, and retry with fallback.','JWT login, email OTP sign-up, voice input and output, admin analytics, 21 automated tests.','Runs in Docker on Render with PostgreSQL on Neon.'],g:['React','Django REST','Google Gemini','PostgreSQL','Docker'],l:[['Live demo','https://chatbot-web-yhtv.onrender.com/'],['GitHub','https://github.com/AryanJaiswal9454/Dynamic-Chatbot']]},
+{k:['ai','data'],t:'UPI Fraud Detection',s:'Machine learning',st:'In progress',b:['Flags potentially fraudulent UPI transactions.','Trained and compared Random Forest and Gradient Boosting models, deployed as an interactive Streamlit app.','Now improving the dataset the model is trained on to make its predictions stronger.'],g:['Python','scikit-learn','Pandas','Streamlit'],l:[['Live demo','https://upi-fraud-detection-projectaj.streamlit.app/'],['GitHub','https://github.com/AryanJaiswal9454/upi-fraud-detection']]},
+{k:['ai'],t:'CareerBridge AI',s:'Resume and job description matching',b:['Django platform that uses Generative AI to analyse resumes, match them to job descriptions and find skill gaps.','Builds career roadmaps; REST APIs, file uploads and MySQL, deployed on Render.'],g:['Django','DRF','Generative AI','MySQL'],l:[['Live demo','https://careerbridge-frontend-4ne9.onrender.com/'],['GitHub','https://github.com/AryanJaiswal9454/CareerBridge']]},
+{k:['data'],t:'Project Foresight',s:'Demand forecasting (Zidio internship)',b:['Forecasting and inventory-risk pipeline for 50 products, tested against a seasonal-naive baseline over 4 folds.','LightGBM reached 0.226 WAPE versus 0.312, a 27.6% improvement.','Delivered as a Streamlit dashboard and a FastAPI scoring service.'],g:['Python','Pandas','LightGBM','Streamlit','FastAPI'],l:[['Live demo','https://project-foresight-66bf.onrender.com/'],['GitHub','https://github.com/AryanJaiswal9454/Project_Foresight']]},
+{k:['data'],t:'Personal Finance Tracker',s:'Django web application',b:['Tracks income, expenses and savings goals, and turns transactions into spending insights.'],g:['Django','MySQL','JavaScript'],l:[]}
+];
+var list=document.getElementById('list');
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function render(f){
+ list.innerHTML=P.filter(function(p){return f==='all'||p.k.indexOf(f)>-1}).map(function(p){
+  return '<article class="proj"><div><h3>'+esc(p.t)+(p.st?'<span class="status">'+esc(p.st)+'</span>':'')+'</h3><div class="kind">'+esc(p.s)+'</div></div><div><ul>'+p.b.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul><div class="tags">'+p.g.map(function(x){return '<span>'+esc(x)+'</span>'}).join('')+'</div>'+(p.l.length?'<div class="links">'+p.l.map(function(x){return '<a href="'+x[1]+'" target="_blank" rel="noopener">'+x[0]+'</a>'}).join('')+'</div>':'')+'</div></article>';
+ }).join('');
+}
+render('all');
+document.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){
+ document.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===c)});render(c.dataset.f);
+})});
+var root=document.documentElement,btn=document.getElementById('theme');
+function setTheme(t,save){root.setAttribute('data-theme',t);btn.innerHTML=t==='dark'?'&#9728;':'&#9790;';btn.setAttribute('aria-label','Switch to '+(t==='dark'?'light':'dark')+' theme');if(save){try{localStorage.setItem('theme',t)}catch(e){}}}
+var saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+setTheme(saved||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'),false);
+btn.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark',true)});
+</script>
+</body>
+</html>
